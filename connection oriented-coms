@@ -1,0 +1,43 @@
+TRANSPORT LAYER BASICS
+
+connection oriented-coms
+
+sender sends request to sync
+comp2 acknowledges and negotiation occurs for connection
+comp2 syncs back
+comp1 ACK
+established connection
+data transfer
+machines 1 and 2 will check connection through protocol software
+
+
+
+COMMS arent smooth
+
+assume a bottleneckof infor floods in all at once, 
+buffer area created in memory for small burst
+too many or large bursts cause flood capacity overrun
+flooding causes deleted datagrams
+
+a "not-ready" indication can be sent tyo sender of flood
+receiver processes datagram info and then tells sender "ready"
+
+if ther datagrams are out of order or not numerically linear a failure aoccurs
+to fix this have the reciving host send out an acknowledgement of every datagram
+
+WINDOWING
+speed is slow if you have to do each segment of data
+after sending forst segment, sending machine has downtime waiting for ack
+
+WINDOW is the quantity of segments the sender is allowed to recievbe in its window period waiting for ack
+protocols can be - number of bytes or number of packets, 
+ack with retransmission
+
+
+sending comp sends and starts a timer, if no ack within time frame packets resent
+
+comp1 sends 1,2,3
+ack from comp2
+comp1 sends 456
+ack from comp2 onmly for 4,6 packet
+comp1 sends 5 comp2 ack 5
